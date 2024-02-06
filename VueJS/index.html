@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue 3</title>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <div id="hello" v-cloak>
+            {{greeting}}
+            <input @keyup.enter="greet(greeting + '!!!!')" v-model="greeting"/>
+            <p>{{ wallah }}</p>
+            <div v-show="isShow" class="box"><h3>v-show isVisible(True)</h3></div>
+            <div v-if="isVisible" class="box"><h1>v-if isVisible(True)</h1></div>
+            <div v-else-if="isVisible2" class="box"><h1>v-else-if isVisible(True)</h1></div>
+            <div v-else class="box"><h1>v-else isVisible(True)</h1></div>
+            <button v-on:click="isVisible=!isVisible;">v-on:click</button>
+            <button @click="isVisible=!isVisible;">@click</button>
+            <button @click="toggleBox">Methods</button>
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="/vue.js"></script>
+    </body>
+</html>
